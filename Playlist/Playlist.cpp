@@ -15,23 +15,31 @@
 
  // Preprocessor directives
 #include <random>
+#include <string>
+using std::string;
+#include <vector>
+using std::vector;
+
+#include <iostream>
+using std::cout;
+using std::endl;
 
 
 int main()
 {
 	// Create a vector of strings; add items using a list initializer
-	vector<String> songs = "Happy Birthday", "MacArthur Park", "Enjoy the Silence", "The Song from the Jardiance Commercials";
+	vector<string> songs = { "Happy Birthday", "MacArthur Park", "Enjoy the Silence", "The Song from the Jardiance Commercials" };
 
 	// Add a 5th string to the end of the vector
-	songs.put("Always Look at the Bright Side of Life");
+	songs.push_back("Always Look at the Bright Side of Life");
 
 	// Print the playlist to the screen
-	cout << "Your Playlist:" >> endl;
+	cout <<  "Your Playlist:"  << endl;
 
 	// Loop through the vector of songs; print each vector element to console.
-	for (i = 0; i < songs.Length; i++)
+	for (int i = 0; i < songs.size(); i++)
 	{
-		cout << songs.get(i) << endl;
+		cout << songs[i] << endl;
 	}
 
 	// Set up a random number generator seeder
@@ -44,12 +52,12 @@ int main()
 	int index = rand_dist(seed);
 
 	// Get the item from the vector at the randomly-selected index
-	String currentSong = songs.get[index];
+	string currentSong = songs[index];
 
 	// Convert each charcter of the 'currentSong' string to UPPERCASE
 	for (char c : currentSong)
 	{
-		c = c.toUpper();
+		c = std::toupper(c);
 	}
 
 	// Print the UPPERCASE 'currentSong' string
